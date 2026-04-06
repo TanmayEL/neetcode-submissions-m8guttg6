@@ -13,16 +13,15 @@ class Solution:
         def dfs(node):
             if node in seen:
                 return 0
-            
+
             seen.add(node)
 
             for nei in adj[node]:
                 dfs(nei)
-        
+
             return 1
         
         res = 0
         for i in range(n):
             res += dfs(i)
-
         return res
